@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 560" width="1200" height="560" role="img" aria-label="Diagram: the four controls the programme ran, what each one was built after, and which of them was on the causal path when the one positive estimate was retired.">
+  <rect width="1200" height="560" fill="#12161C"/>
+
+  <text x="60" y="52" font-family="Georgia, serif" font-size="26" fill="#F2F4F7">What the programme ran, and what each control was built after</text>
+  <text x="60" y="80" font-family="Georgia, serif" font-size="15" font-style="italic" fill="#8B98A8">Every control here exists because something went wrong first. The entry id is the receipt.</text>
+
+  <!-- column headers -->
+  <g font-family="'SF Mono', Consolas, monospace" font-size="12" fill="#6B7888" letter-spacing="2">
+    <text x="60"  y="126">THE CONTROL</text>
+    <text x="470" y="126">BUILT AFTER</text>
+    <text x="880" y="126">WHAT IT CANNOT DO</text>
+  </g>
+  <line x1="60" y1="140" x2="1140" y2="140" stroke="#2A323D" stroke-width="1"/>
+
+  <!-- row 1 -->
+  <rect x="60" y="158" width="380" height="72" rx="4" fill="#1A2029" stroke="#2E7D32" stroke-width="2"/>
+  <text x="80" y="186" font-family="Georgia, serif" font-size="17" fill="#F2F4F7">Preregistration dated by commit</text>
+  <text x="80" y="210" font-family="'SF Mono', Consolas, monospace" font-size="12" fill="#8B98A8">ancestry of the governing text, not the filename</text>
+  <text x="470" y="188" font-family="Georgia, serif" font-size="15" fill="#C9D2DD">A document titled PREREG, written</text>
+  <text x="470" y="210" font-family="Georgia, serif" font-size="15" fill="#C9D2DD">after the result was seen.  <tspan fill="#6B7888">E-42</tspan></text>
+  <text x="880" y="199" font-family="Georgia, serif" font-size="15" fill="#8B98A8">Stop an author who intends to forge.</text>
+
+  <!-- row 2 -->
+  <rect x="60" y="248" width="380" height="72" rx="4" fill="#1A2029" stroke="#2E7D32" stroke-width="2"/>
+  <text x="80" y="276" font-family="Georgia, serif" font-size="17" fill="#F2F4F7">Specification checked by AST</text>
+  <text x="80" y="300" font-family="'SF Mono', Consolas, monospace" font-size="12" fill="#8B98A8">each declared rule must name a symbol that exists</text>
+  <text x="470" y="278" font-family="Georgia, serif" font-size="15" fill="#C9D2DD">A spec promised outputs the code</text>
+  <text x="470" y="300" font-family="Georgia, serif" font-size="15" fill="#C9D2DD">discarded.  <tspan fill="#6B7888">E-45</tspan></text>
+  <text x="880" y="289" font-family="Georgia, serif" font-size="15" fill="#8B98A8">Tell you the rule is correct.</text>
+
+  <!-- row 3 -->
+  <rect x="60" y="338" width="380" height="72" rx="4" fill="#1A2029" stroke="#2E7D32" stroke-width="2"/>
+  <text x="80" y="366" font-family="Georgia, serif" font-size="17" fill="#F2F4F7">Mutation rows over the guards</text>
+  <text x="80" y="390" font-family="'SF Mono', Consolas, monospace" font-size="12" fill="#8B98A8">break one line, a named test must fail</text>
+  <text x="470" y="368" font-family="Georgia, serif" font-size="15" fill="#C9D2DD">Three guards whose tests passed</text>
+  <text x="470" y="390" font-family="Georgia, serif" font-size="15" fill="#C9D2DD">without proving anything.  <tspan fill="#6B7888">E-07</tspan></text>
+  <text x="880" y="379" font-family="Georgia, serif" font-size="15" fill="#8B98A8">Measure coverage. The mutants were chosen.</text>
+
+  <!-- row 4 -->
+  <rect x="60" y="428" width="380" height="72" rx="4" fill="#1A2029" stroke="#2E7D32" stroke-width="2"/>
+  <text x="80" y="456" font-family="Georgia, serif" font-size="17" fill="#F2F4F7">The count is generated</text>
+  <text x="80" y="480" font-family="'SF Mono', Consolas, monospace" font-size="12" fill="#8B98A8">parsed from the tables, refuses duplicate ids</text>
+  <text x="470" y="458" font-family="Georgia, serif" font-size="15" fill="#C9D2DD">The register said three different</text>
+  <text x="470" y="480" font-family="Georgia, serif" font-size="15" fill="#C9D2DD">figures at once.  <tspan fill="#6B7888">§2</tspan></text>
+  <text x="880" y="469" font-family="Georgia, serif" font-size="15" fill="#8B98A8">Make the entries true. Only the arithmetic.</text>
+
+  <line x1="60" y1="524" x2="1140" y2="524" stroke="#2A323D" stroke-width="1"/>
+  <text x="60" y="548" font-family="Georgia, serif" font-size="15" font-style="italic" fill="#C0392B">None of the four retired the positive estimate. A protocol somebody had to remember, and a decision about trade classification, did that.</text>
+</svg>

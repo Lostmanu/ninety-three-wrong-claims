@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" width="1200" height="300" role="img" aria-label="Ninety-Three Wrong Claims: a register from a research programme that found nothing and wrote down why. 93 entries, 14 discovery labels, 457 commits, no edge found.">
+  <rect width="1200" height="300" fill="#12161C"/>
+  <rect x="0" y="0" width="1200" height="4" fill="#2E7D32"/>
+
+  <text x="72" y="98" font-family="Georgia, 'Times New Roman', serif" font-size="54" fill="#F2F4F7">Ninety-Three Wrong Claims</text>
+  <text x="72" y="138" font-family="Georgia, 'Times New Roman', serif" font-size="22" font-style="italic" fill="#8B98A8">A research programme that found nothing, and kept the record of why.</text>
+
+  <line x1="72" y1="172" x2="1128" y2="172" stroke="#2A323D" stroke-width="1"/>
+
+  <g font-family="'SF Mono', 'DejaVu Sans Mono', Consolas, monospace">
+    <text x="72"  y="214" font-size="12" fill="#6B7888" letter-spacing="2.5">ENTRIES IN THE REGISTER</text>
+    <text x="72"  y="258" font-size="38" fill="#F2F4F7">93</text>
+
+    <text x="330" y="214" font-size="12" fill="#6B7888" letter-spacing="2.5">DISCOVERY LABELS</text>
+    <text x="330" y="258" font-size="38" fill="#F2F4F7">14</text>
+
+    <text x="540" y="214" font-size="12" fill="#6B7888" letter-spacing="2.5">COMMITS</text>
+    <text x="540" y="258" font-size="38" fill="#F2F4F7">457</text>
+
+    <text x="740" y="214" font-size="12" fill="#6B7888" letter-spacing="2.5">EDGE FOUND</text>
+    <text x="740" y="258" font-size="38" fill="#C0392B">none</text>
+
+    <text x="940" y="214" font-size="12" fill="#6B7888" letter-spacing="2.5">THE COUNT IS</text>
+    <text x="940" y="258" font-size="38" fill="#2E7D32">generated</text>
+  </g>
+</svg>
