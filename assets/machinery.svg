@@ -31,9 +31,9 @@
   <!-- row 3 -->
   <rect x="60" y="338" width="380" height="72" rx="4" fill="#1A2029" stroke="#2E7D32" stroke-width="2"/>
   <text x="80" y="366" font-family="Georgia, serif" font-size="17" fill="#F2F4F7">Mutation rows over the guards</text>
-  <text x="80" y="390" font-family="'SF Mono', Consolas, monospace" font-size="12" fill="#8B98A8">break one line, a named test must fail</text>
-  <text x="470" y="368" font-family="Georgia, serif" font-size="15" fill="#C9D2DD">Three guards whose tests passed</text>
-  <text x="470" y="390" font-family="Georgia, serif" font-size="15" fill="#C9D2DD">without proving anything.  <tspan fill="#6B7888">E-07</tspan></text>
+  <text x="80" y="390" font-family="'SF Mono', Consolas, monospace" font-size="12" fill="#8B98A8">disable a check, a named test must fail</text>
+  <text x="470" y="368" font-family="Georgia, serif" font-size="15" fill="#C9D2DD">Twenty tests for three fixes, and no</text>
+  <text x="470" y="390" font-family="Georgia, serif" font-size="15" fill="#C9D2DD">proof any could fail.  <tspan fill="#6B7888">C-10</tspan></text>
   <text x="880" y="379" font-family="Georgia, serif" font-size="15" fill="#8B98A8">Measure coverage. The mutants were chosen.</text>
 
   <!-- row 4 -->

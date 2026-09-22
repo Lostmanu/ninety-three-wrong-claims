@@ -7,7 +7,7 @@
   <img src="https://img.shields.io/badge/entries-93-F2F4F7?style=flat-square&labelColor=12161C" alt="93 entries">
   <img src="https://img.shields.io/badge/the%20count-generated%2C%20not%20typed-2E7D32?style=flat-square&labelColor=12161C" alt="the count is generated">
   <img src="https://img.shields.io/badge/dependencies-none-2E7D32?style=flat-square&labelColor=12161C" alt="no dependencies">
-  <img src="https://img.shields.io/badge/python-3.9%2B-3776AB?style=flat-square&labelColor=12161C&logo=python&logoColor=white" alt="Python 3.9+">
+  <img src="https://img.shields.io/badge/python-3.12-3776AB?style=flat-square&labelColor=12161C&logo=python&logoColor=white" alt="Python 3.12">
   <img src="https://img.shields.io/badge/licence-Apache--2.0-455A64?style=flat-square&labelColor=12161C" alt="Apache 2.0">
 </p>
 
@@ -62,9 +62,9 @@ python tools/figura_registro.py --check       # the figure below
 
 </details>
 
-Nobody types that number, and nobody drew that figure. The counter regenerates the tally from the tables and
-refuses to run if two entries share an id; [`tools/figura_registro.py`](tools/figura_registro.py) draws the
-squares from the same parse. [Both are checked on every push](.github/workflows/register.yml): if a row
+The register's own tally is never typed: the counter regenerates it from the tables and refuses to run if
+two entries share an id, and [`tools/figura_registro.py`](tools/figura_registro.py) draws the squares from
+the same parse. The badges and the folded table on this page are transcriptions, and nothing checks them. [Both are checked on every push](.github/workflows/register.yml): if a row
 changes and either one goes stale, the build says so. That control exists because the count once said three
 different figures at once in the same document, and an external reviewer caught it by counting the rows
 himself. Both facts are entries in the register.
@@ -104,7 +104,7 @@ wrong, while it was happening, with the discoverer named.
 <tr><td valign="top"><b>4</b></td><td><b>The detection method is recorded for 25 of the 93.</b> The other 68 name only the discoverer.</td></tr>
 <tr><td valign="top"><b>5</b></td><td><b>One account authored all the commits</b>, so the repository alone cannot attribute a change to one party.</td></tr>
 <tr><td valign="top"><b>6</b></td><td><b>The register stops on 28 August 2026</b> while the work continued to 9 September. Claims found and corrected after that date are not in it.</td></tr>
-<tr><td valign="top"><b>7</b></td><td><b>The market data cannot be redistributed</b> under its provider's terms, so the trading result is not reproducible from here. The register, the count and the tool are.</td></tr>
+<tr><td valign="top"><b>7</b></td><td><b>The market data is not included</b>, out of licence prudence, so the trading result is not reproducible from here. The register, the count and the tool are.</td></tr>
 </table>
 
 ---
@@ -130,8 +130,7 @@ register entries and one line of each paper, and the rule was to remove identity
 
 - the hosting provider and the off-site backup provider became "another provider" and "off-site";
 - the data centre where the backup lives became "another data centre";
-- the two commercial data vendors became "the first provider" and "the second provider", which is what the
-  papers already called them;
+- the two commercial data vendors became "the first provider" and "the second provider";
 - the names of a running service and of the alert channel became their roles.
 
 No entry id, date, count or discoverer column was touched, and the counter still reproduces 93 from the

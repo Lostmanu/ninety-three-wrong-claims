@@ -37,25 +37,45 @@ GRUPOS = [
     ("CI",                "#17A2B8", "continuous integration"),
     ("el propio revisor", "#C0392B", "the reviewer, about his own claim"),
 ]
-OTROS = ("#5A6674", "eight further labels, one entry each")
+OTROS_COLOR = "#5A6674"
+_NUMEROS = {1: "one", 2: "two", 3: "three", 4: "four", 5: "five", 6: "six", 7: "seven", 8: "eight",
+            9: "nine", 10: "ten", 11: "eleven", 12: "twelve"}
+
+
+def etiqueta_otros(n_etiquetas):
+    """La leyenda de las sueltas se DERIVA del recuento. Escrita a mano («eight further labels») habria
+    seguido pasando `--check` el dia que dejaran de ser ocho: el defecto que esta figura existe para evitar."""
+    palabra = _NUMEROS.get(n_etiquetas, str(n_etiquetas))
+    return f"{palabra} further label{'s' if n_etiquetas != 1 else ''}, one entry each"
+
+
 COL, LADO, HUECO, X0, Y0 = 16, 34, 6, 60, 150
 
 
 def casillas(filas):
     """Una casilla por entrada, agrupadas por descubridor y en el orden de `GRUPOS`."""
     por_grupo = {k: [] for k, _, _ in GRUPOS}
-    sueltas = []
+    sueltas, etiquetas_sueltas = [], {}
     for id_, desc in filas:
         clave = desc.split(",")[0].split("+")[0].strip()
-        (por_grupo[clave] if clave in por_grupo else sueltas).append(id_)
+        if clave in por_grupo:
+            por_grupo[clave].append(id_)
+        else:
+            sueltas.append(id_)
+            etiquetas_sueltas[clave] = etiquetas_sueltas.get(clave, 0) + 1
+    # «one entry each» tiene que ser verdad, no suponerse: si una etiqueta suelta gana una segunda
+    # entrada, pasa a merecer su propio color en GRUPOS y la figura se niega a dibujarse sin él.
+    repetidas = {k: v for k, v in etiquetas_sueltas.items() if v > 1}
+    if repetidas:
+        raise SystemExit(f"ETIQUETAS SUELTAS CON MAS DE UNA ENTRADA: {repetidas}. Añádelas a GRUPOS.")
     orden = []
     for k, color, _ in GRUPOS:
         orden += [(i, color) for i in por_grupo[k]]
-    orden += [(i, OTROS[0]) for i in sueltas]
-    return orden, {k: len(por_grupo[k]) for k, _, _ in GRUPOS}, len(sueltas)
+    orden += [(i, OTROS_COLOR) for i in sueltas]
+    return orden, {k: len(por_grupo[k]) for k, _, _ in GRUPOS}, len(sueltas), len(etiquetas_sueltas)
 
 
-def svg(orden, cuentas, n_sueltas, n_e, n_x):
+def svg(orden, cuentas, n_sueltas, n_etiq, n_e, n_x):
     filas_alto = (len(orden) + COL - 1) // COL
     alto = Y0 + filas_alto * (LADO + HUECO) + 96
     L = [f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 {alto}" width="1200" '
@@ -85,9 +105,9 @@ def svg(orden, cuentas, n_sueltas, n_e, n_x):
         L.append(f'  <text x="1140" y="{ly}" font-family="Georgia, serif" font-size="15" '
                  f'fill="#F2F4F7" text-anchor="end">{cuentas[k]}</text>')
         ly += 30
-    L.append(f'  <rect x="{lx}" y="{ly - 13}" width="15" height="15" rx="2" fill="{OTROS[0]}"/>')
+    L.append(f'  <rect x="{lx}" y="{ly - 13}" width="15" height="15" rx="2" fill="{OTROS_COLOR}"/>')
     L.append(f'  <text x="{lx + 26}" y="{ly}" font-family="Georgia, serif" font-size="15" '
-             f'fill="#C9D2DD">{OTROS[1]}</text>')
+             f'fill="#C9D2DD">{etiqueta_otros(n_etiq)}</text>')
     L.append(f'  <text x="1140" y="{ly}" font-family="Georgia, serif" font-size="15" '
              f'fill="#F2F4F7" text-anchor="end">{n_sueltas}</text>')
     ly += 34
@@ -116,12 +136,12 @@ def main():
 
     texto = io.open(DOC, encoding="utf-8").read()
     e, x, _ = R.recuento(texto)                 # reusa el parseo Y el rechazo de ids duplicados
-    orden, cuentas, n_sueltas = casillas(e + x)
-    nuevo = svg(orden, cuentas, n_sueltas, len(e), len(x))
+    orden, cuentas, n_sueltas, n_etiq = casillas(e + x)
+    nuevo = svg(orden, cuentas, n_sueltas, n_etiq, len(e), len(x))
     print(f"  entradas en el registro .. {len(orden)}  ({len(e)} del autor, {len(x)} del revisor)")
     for k, _, etiqueta in GRUPOS:
         print(f"     {etiqueta:38} {cuentas[k]}")
-    print(f"     {OTROS[1]:38} {n_sueltas}")
+    print(f"     {etiqueta_otros(n_etiq):38} {n_sueltas}")
 
     viejo = io.open(SVG, encoding="utf-8").read() if os.path.exists(SVG) else None
     if viejo == nuevo:
