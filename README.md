@@ -3,6 +3,7 @@
 </p>
 
 <p align="center">
+  <a href="https://github.com/Lostmanu/ninety-three-wrong-claims/actions/workflows/register.yml"><img src="https://img.shields.io/github/actions/workflow/status/Lostmanu/ninety-three-wrong-claims/register.yml?branch=main&style=flat-square&labelColor=12161C&label=the%20count%2C%20checked%20on%20every%20push" alt="the count, checked on every push"></a>
   <img src="https://img.shields.io/badge/entries-93-F2F4F7?style=flat-square&labelColor=12161C" alt="93 entries">
   <img src="https://img.shields.io/badge/the%20count-generated%2C%20not%20typed-2E7D32?style=flat-square&labelColor=12161C" alt="the count is generated">
   <img src="https://img.shields.io/badge/dependencies-none-2E7D32?style=flat-square&labelColor=12161C" alt="no dependencies">
@@ -17,7 +18,8 @@ be false, together with who or what caught each one. It looked for a trading edg
 and did not find one.
 
 **The register is what it found instead.** This repository holds the register, the paper that analyses it,
-and the tool that counts it.
+and the tool that counts it. The laboratory itself — code, guards, preregistrations and rulings — is in
+[**quant-system**](https://github.com/Lostmanu/quant-system).
 
 > **How this was made.** One person ran the programme working with AI systems, which wrote code, audited it,
 > and account for most of the entries in this register. That is not a footnote. The register is largely a
@@ -28,13 +30,23 @@ and the tool that counts it.
 
 ## Run it yourself
 
-Nothing to install. The counter parses the register's own tables and prints the tally.
+Nothing to install. Both tools parse the register's own tables: one prints the tally, the other draws the figure.
 
 ```bash
 git clone https://github.com/Lostmanu/ninety-three-wrong-claims
 cd ninety-three-wrong-claims
-python tools/recuento_auditoria.py --check
+python tools/recuento_auditoria.py --check   # the tally
+python tools/figura_registro.py --check       # the figure below
 ```
+
+<p align="center">
+  <img src="assets/register.svg" alt="93 squares, one per false claim in the register, coloured by who or what caught it: 35 an external human reviewer, 25 the author, 12 an automated adversarial review, 9 the mutation harness, 2 continuous integration, 2 the reviewer about his own claim, 8 further labels with one entry each" width="100%">
+</p>
+
+<details>
+<summary>The same numbers, as a table</summary>
+
+<br>
 
 <table>
 <tr><th align="left">who or what caught it</th><th align="right">entries</th></tr>
@@ -48,9 +60,14 @@ python tools/recuento_auditoria.py --check
 <tr><td><b>total</b></td><td align="right"><b>93</b></td></tr>
 </table>
 
-Nobody types that number. A tool regenerates it from the tables and refuses to run if two entries share an
-id. That control exists because the count once said three different figures at once in the same document,
-and an external reviewer caught it by counting the rows himself. Both facts are entries in the register.
+</details>
+
+Nobody types that number, and nobody drew that figure. The counter regenerates the tally from the tables and
+refuses to run if two entries share an id; [`tools/figura_registro.py`](tools/figura_registro.py) draws the
+squares from the same parse. [Both are checked on every push](.github/workflows/register.yml): if a row
+changes and either one goes stale, the build says so. That control exists because the count once said three
+different figures at once in the same document, and an external reviewer caught it by counting the rows
+himself. Both facts are entries in the register.
 
 ---
 
@@ -83,7 +100,7 @@ wrong, while it was happening, with the discoverer named.
 <table>
 <tr><td valign="top"><b>1</b></td><td><b>93 is the denominator of what was recorded</b>, not of errors made, and not of the chances each mechanism had to catch something. The errors nobody found are absent by construction, and those are the interesting ones.</td></tr>
 <tr><td valign="top"><b>2</b></td><td><b>One laboratory, one annotator</b>, and the annotator is one of the parties. No inter-rater agreement.</td></tr>
-<tr><td valign="top"><b>3</b></td><td><b>No control group.</b> Nobody has built the same system twice, so this cannot show that one method finds more defects than another. The table above ranks nothing.</td></tr>
+<tr><td valign="top"><b>3</b></td><td><b>No control group.</b> Nobody has built the same system twice, so this cannot show that one method finds more defects than another. The figure above ranks nothing.</td></tr>
 <tr><td valign="top"><b>4</b></td><td><b>The detection method is recorded for 25 of the 93.</b> The other 68 name only the discoverer.</td></tr>
 <tr><td valign="top"><b>5</b></td><td><b>One account authored all the commits</b>, so the repository alone cannot attribute a change to one party.</td></tr>
 <tr><td valign="top"><b>6</b></td><td><b>The register stops on 28 August 2026</b> while the work continued to 9 September. Claims found and corrected after that date are not in it.</td></tr>
@@ -98,7 +115,7 @@ wrong, while it was happening, with the discoverer named.
 |---|---|
 | [`register/`](register/AUDITORIA_DEL_METODO.md) | the register, in Spanish, as it was kept. 93 entries plus system defects and structural corrections |
 | [`paper/`](paper/ninety-three-wrong-claims.en.md) | the paper, in [English](paper/ninety-three-wrong-claims.en.md) and [Spanish](paper/noventa-y-tres-afirmaciones-falsas.es.md). Draft 2, not submitted and not peer reviewed |
-| [`tools/`](tools/recuento_auditoria.py) | the counter. Standard library only |
+| [`tools/`](tools/recuento_auditoria.py) | the counter, and the script that draws the figure from the same parse. Standard library only |
 
 The register is in Spanish because that is the language it was kept in. Translating it after the fact would
 make it a different document. The paper is in both languages.

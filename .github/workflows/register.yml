@@ -1,0 +1,22 @@
+name: register
+on:
+  push:
+  pull_request:
+
+# Two checks, and each one reports on its own (`!cancelled()`), because a check that is skipped
+# when the one before it fails is a control that exists and does not speak. The laboratory this
+# register comes from learned that the hard way; it is entry-level knowledge here.
+jobs:
+  the-count-is-generated:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      # the tally in the register's section 2 must be the one its own tables produce today
+      - run: python tools/recuento_auditoria.py --check
+        if: ${{ !cancelled() }}
+      # and so must the figure on the front page
+      - run: python tools/figura_registro.py --check
+        if: ${{ !cancelled() }}
