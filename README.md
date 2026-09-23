@@ -21,10 +21,10 @@ and did not find one.
 and the tool that counts it. The laboratory itself — code, guards, preregistrations and rulings — is in
 [**quant-system**](https://github.com/Lostmanu/quant-system).
 
-> **How this was made.** One person ran the programme working with AI systems, which wrote code, audited it,
-> and account for most of the entries in this register. That is not a footnote. The register is largely a
-> record of what those systems claimed and got wrong, and of who or what caught each one. The paper says the
-> same thing in section 10.
+> **How this was made.** One person ran the programme working with AI systems, which wrote the code, audited
+> it and account for part of the entries in this register. The paper gives no proportion, because the
+> record does not attribute individual entries to a named person or system; it records who or what caught
+> each one. Section 10 of the paper describes the assistance.
 
 ---
 
