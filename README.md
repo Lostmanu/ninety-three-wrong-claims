@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/banner.svg" alt="Ninety-Three Wrong Claims — a research programme that found nothing, and kept the record of why" width="100%">
+  <img src="assets/banner.svg" alt="Ninety-Three Wrong Claims: a research programme that found nothing, and kept the record of why" width="100%">
 </p>
 
 <p align="center">
@@ -18,7 +18,7 @@ be false, together with who or what caught each one. It looked for a trading edg
 and did not find one.
 
 **The register is what it found instead.** This repository holds the register, the paper that analyses it,
-and the tool that counts it. The laboratory itself — code, guards, preregistrations and rulings — is in
+and the tool that counts it. The laboratory itself (code, guards, preregistrations and rulings) is in
 [**quant-system**](https://github.com/Lostmanu/quant-system).
 
 > **How this was made.** One person ran the programme working with AI systems, which wrote the code, audited
